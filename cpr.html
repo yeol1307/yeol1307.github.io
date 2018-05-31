@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>web——cpr</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/bmobSocketIo.js"></script>
+    <script type="text/javascript" src="javascripts/bmob.min.js"></script>
+    <script type="text/javascript" src="javascripts/bmob.js"></script>
+    <script type="text/javascript" src="javascripts/app.js"></script>
+</head>
+<body>
+        <h1>cpr</h1>
+        <br><br>
+        <div>
+            &nbsp;&nbsp;&nbsp;<button onclick="App.queryGPS()">queryGPS</button>
+            &nbsp;&nbsp;&nbsp;<button onclick="App.querycpr()">querycpr</button>
+            <br>
+            <div id="queryGPS" ></div>
+        
+        </div>
+        <div  id='main_ditu' style="width: 100%;height: 600px"></div>
+        <span id="confirm_position" style="cursor:pointer;position:absolute;right:30px;top:56px;background-color:#000;opacity:0.5;filter:alpha(opacity=50);border:1px solid #000000;width:80px;height:24px;line-height:20px;font-weight:bold;font-size:14px;color:#ffffff;padding-left:10px;display:none">确认此位置</span>
+        <input type='hidden' id='position_lng' value='0'>
+        <input type='hidden' id='position_lat' value='0'>
+    </div>
+    <div id="container" style="width: 1500px;height: 1000px"></div>
+    <script language=javascript>
+        var int=self.setInterval("App.queryGPS()",1000)
+        var int=self.setInterval("App.querycpr()",1000)
+        </script>
+      
+</body>
+
+</html>
